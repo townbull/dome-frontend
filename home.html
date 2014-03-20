@@ -148,50 +148,51 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">My Sky
-          <button type="button" class="btn btn-lg btn-info"> + Add a Cloud</button>
-          <!--
-            <div class="btn-group pull-right">
-              <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-                + Add A Cloud <span class="caret"></span>
+          <!-- <button type="button" class="btn btn-lg btn-info"> + Add a Cloud</button> -->
+                      <div class="btn-group pull-right">
+              <button type="button" class="btn btn-lg btn-info dropdown-toggle" data-toggle="dropdown">
+                + Add Cloud <span class="caret"></span>
               </button>
               <ul class="dropdown-menu dropdown-menu-right" role="menu">
                 <li role="presentation" class="dropdown-header">Supported Clouds</li>
-                <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Google Drive</a></li>
-                <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Dropbox</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another Cloud</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Google Drive</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dropbox</a></li>
               </ul>
             </div>
-          -->
+
           </h1>
 
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
               <a href="drive.html"><img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="200x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzBEOEZEQiI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEwMCIgeT0iMTAwIiBzdHlsZT0iZmlsbDojZmZmO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEzcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjAweDIwMDwvdGV4dD48L3N2Zz4="></a>
               <h4>Google Drive</h4>
+              <span>username@example.com</span><br/>
               <span class="text-muted">5.32 GB of 15 GB Used</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <a href="drive.html"><img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="200x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzM5REJBQyI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEwMCIgeT0iMTAwIiBzdHlsZT0iZmlsbDojMUUyOTJDO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEzcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjAweDIwMDwvdGV4dD48L3N2Zz4="></a>
               <h4>Dropbox</h4>
+              <span>username@example.com</span><br/>
               <span class="text-muted">12.5 GB of 22.25 GB Used</span>
             </div>
           </div>
-          
+
 
           <h2 class="sub-header"> Meshed Files
-          <span class="badge">42</span> 
-          <div class="btn-group pull-right">
-            <div class="btn-group">
+          <span class="badge">3</span>
+          <button class="btn btn-default pull-right" data-toggle="modal" data-target="#meshfiles">+ Mesh More</button>
+            <!--
+            <div class="btn-group pull-right">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                 + Mesh More <span class="caret"></span>
               </button>
               <ul class="dropdown-menu dropdown-menu-right" role="menu">
                 <li role="presentation" class="dropdown-header">Choose file from</li>
-                <!-- Dropdown menu links -->              
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Google Drive</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dropbox</a></li>
               </ul>
             </div>
+            -->
           </h2>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -229,12 +230,39 @@
       </div>
     </div>
 
+    <!-- Modals linked from the page buttons
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <div class="modal fade" id="meshfiles" tabindex="-1" role="dialog" aria-labelledby="linkedAccounts" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="linkedAccounts">Meshed Accounts</h4>
+          </div>
+          <div class="modal-body row">
+            <div class="col-xs-6 col-sm-3">
+              <a href="#google_picker"><img class="img-responsive" alt="Google" src="img/google-drive-logo.png">
+              <span>xxx@example.com</span></a>
+            </div>
+
+            <div class="col-xs-6 col-sm-3">
+              <a href="#dropbox_chooser"><img class="img-responsive" alt="Dropbox" src="img/dropbox-logo.png">
+              <span>xxx@example.com</span></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
-  
+
 
 </body></html>
